@@ -8,24 +8,37 @@
     <title>Gif Depot</title>
   </head>
   <body>
-    <div id="cartoonGif">
 
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12" id="gifbar"></div>
+      <div class="row">
+        <div class="col-xs-6" id="cartoons"></div>
+          <form class="form-inline col-xs">
+            <div class="form-group">
+              <label class="sr-only" for="search-input">Character Name</label>
+              <input type="search" class="form-control" id="searching" placeholder="Search Character Gif">
+            </div>
+            <button type="submit" class="btn btn-primary" id="addCharacter">Search!</button>
+          </form>
+        </div>
+      </div>
     </div>
-
-    <form id="cartoon-form">
+  <!--  <form id="cartoon-form">
         <label for="cartoon-input">Add a character!</label>
         <input type="text" id="cartoon-input"/>
 
         <input id="addCartoon" type="submit" value="Submit" class="btn btn-primary"/>
     </form>
+  -->
 
-    <div id="cartoons"></div>
 
   </body>
 
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="bower_components/tether/dist/js/tether.min.js"></script>
   <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="javascript/app.js"></script>
 
 
 </html>
