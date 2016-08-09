@@ -30,7 +30,7 @@ $(document).on('click', '.character', function() {
 function gifSearch (search) {
   $('#cartoons').empty();
   var query = search
-  var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + query + '&limit=10&api_key=dc6zaTOxFJmzC'
+  var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&limit=10&api_key=dc6zaTOxFJmzC'
   $.ajax({url: queryURL, method: 'GET'})
    .done(function (response) {
      for (var i = 0; i < 10; i++) {
