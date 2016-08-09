@@ -13,8 +13,13 @@ form {
 }
 
 p {
-
   color: white;
-  background-color: red;
+}
+
+#cartoons {
+  margin-top: 100px;
+}
+
+.container {
 
 }
