@@ -6,6 +6,8 @@ for (var i = 0; i < cartoonCharacters.length; i++) {
   var c = $('<button>');
   c.addClass('btn btn-info character');
   c.attr('data-name', cartoonCharacters[i]);
+  c.attr('data-toggle', 'button');
+  c.attr('aria-pressed','false');
   c.text(cartoonCharacters[i]);
   $('#gifbar').append(c);
   }
@@ -28,11 +30,11 @@ $(document).on('click', '.character', function() {
 function gifSearch (search) {
   $('#cartoons').empty();
   var query = search
-  var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + query + '&limit=10&api_key=dc6zaTOxFJmzC'
+  var queryURL = 'http://api.giphy.com/v1/gifs/search?q=' + query + '&limit=10&api_key=dc6zaTOxFJmzC'
   $.ajax({url: queryURL, method: 'GET'})
    .done(function (response) {
      for (var i = 0; i < 10; i++) {
-       console.log(response)
+
        var imageUrl = response.data[i].images.fixed_height_still.url;
        var still = response.data[i].images.fixed_height_still.url;
        var animate = response.data[i].images.fixed_height.url;
@@ -44,6 +46,7 @@ function gifSearch (search) {
 
      $(document).on('click', '.gipper', function() {
        var state = $(this).attr('data-state');
+       console.log(this)
          if (state == 'still'){
              $(this).attr('src', $(this).data('animate'))
              $(this).attr('data-state', 'animate')
