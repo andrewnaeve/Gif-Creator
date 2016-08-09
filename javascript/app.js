@@ -43,19 +43,19 @@ function gifSearch (search) {
        var characterImage = $("<div class='col-xs-4 gif'><img class='gipper' src="+imageUrl+" data-still="+still+" data-animate="+animate+" data-state='still'><p>"+'Rating: '+ratingUp+"</p>");
        $('#cartoons').prepend(characterImage);
      }
-
-     $(document).on('click', '.gipper', function() {
-       var state = $(this).attr('data-state');
-       console.log(this)
-         if (state == 'still'){
-             $(this).attr('src', $(this).data('animate'))
-             $(this).attr('data-state', 'animate')
-         }else{
-             $(this).attr('src', $(this).data('still'))
-             $(this).attr('data-state', 'still')
-         };
-     })
   })
 };
+
+$(document).on('click', '.gipper', function() {
+  var state = $(this).attr('data-state');
+  console.log(this)
+    if (state == 'still'){
+        $(this).attr('src', $(this).data('animate'))
+        $(this).attr('data-state', 'animate')
+    }else{
+        $(this).attr('src', $(this).data('still'))
+        $(this).attr('data-state', 'still')
+    };
+})
 
 run();
